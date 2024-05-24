@@ -3,9 +3,14 @@ import 'package:lista_contatos/Common/MyRouters.dart';
 import 'package:lista_contatos/Pages/AddUserPage.dart';
 import 'package:lista_contatos/items/ListContatos.dart';
 import 'package:lista_contatos/Pages/MyLogin.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +42,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {

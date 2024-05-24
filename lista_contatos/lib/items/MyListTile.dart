@@ -21,6 +21,9 @@ class MyListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      tileColor: Colors.transparent,
+      selectedTileColor: Colors.red,
+      splashColor: Colors.blue,
       title: Text(
         contato.title,
         style: TextStyle(fontSize: 16),

@@ -53,7 +53,12 @@ class _DetalhesContatoState extends State<DetalhesContato> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalhes do Contato'),
+        backgroundColor: Color.fromARGB(255, 1, 42, 187),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text(
+          'Detalhes do Contato',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.save),

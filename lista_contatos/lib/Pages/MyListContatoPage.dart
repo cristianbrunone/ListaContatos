@@ -64,7 +64,8 @@ class MyListContatoPageState extends State<MyListContatoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
         onPressed: () async {
           final newContato =
               await Navigator.pushNamed<Contato>(context, ROUTE_ADDCONTATO);
@@ -75,7 +76,12 @@ class MyListContatoPageState extends State<MyListContatoPage> {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text("Lista Contatos"),
+        backgroundColor: Color.fromARGB(255, 1, 42, 187),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text(
+          "Lista Contatos",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Column(
         children: [
@@ -84,13 +90,15 @@ class MyListContatoPageState extends State<MyListContatoPage> {
             child: TextField(
               onChanged: _runSearch,
               decoration: InputDecoration(
-                  labelText: 'Buscar...',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      borderSide:
-                          BorderSide(color: Theme.of(context).primaryColor)),
-                  prefixIcon: Icon(Icons.search,
-                      color: Theme.of(context).primaryColor)),
+                labelText: 'Buscar...',
+                prefixIcon:
+                    Icon(Icons.search, color: Color.fromARGB(255, 1, 42, 187)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: Colors.white,
+              ),
             ),
           ),
           Expanded(

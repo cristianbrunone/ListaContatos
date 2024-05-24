@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lista_contatos/Common/MyRouters.dart';
+import 'package:lista_contatos/items/MyListTile.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -9,10 +10,13 @@ class MyLogin extends StatefulWidget {
   State<MyLogin> createState() => _MyLoginState();
 }
 
+enum FormType { login, registrer }
+
 class _MyLoginState extends State<MyLogin> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
+  FormType formType = FormType.login;
 
   @override
   Widget build(BuildContext context) {
